@@ -1,0 +1,50 @@
+- title: 数学I
+  slug: hm1
+  url: http://edupa.org/?p=4904
+  chapters:
+  - title: 数と式
+  - title: 方程式と不等式
+  - title: 2次関数
+  - title: 図形と計量
+- title: 数学A
+  slug: hma
+  url: http://edupa.org/?p=931
+  chapters:
+  - title: 集合と論理
+  - title: 順列と組み合わせ
+  - title: 確率
+  - title: 平面図形
+- title: 数学II
+  slug: hm2
+  url: http://edupa.org/?p=915
+  chapters:
+  - title: 数と式
+  - title: 複素数と方程式
+  - title: 図形と式
+  - title: 三角関数
+  - title: 指数関数と対数関数
+  - title: 微分法と積分法
+- title: 数学B
+  slug: hmb
+  url: http://edupa.org/?p=933
+  chapters:
+  - title: 数列
+  - title: ベクトル
+  - title: 複素平面
+  - title: 微分方程式
+- title: 数学III
+  slug: hm3
+  url: http://edupa.org/?p=929
+  chapters:
+  - title: 関数
+  - title: 極限
+  - title: 微分法
+  - title: 微分法の応用
+  - title: 積分法
+  - title: 積分法の応用
+- title: 数学C
+  slug: hmc
+  url: http://edupa.org/?p=935
+  chapters:
+  - title: 行列
+  - title: 式と曲線
