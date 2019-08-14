@@ -28,7 +28,9 @@ task :build_html do
     erb('views/index.erb', title: title, courses: courses)
   end
 
-  File.write('index.html', html)
+  FileUtils.mkdir_p('docs')
+
+  File.write('docs/index.html', html)
 end
 
 task :scrape => 'data/courses.json' do
