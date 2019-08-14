@@ -1,28 +1,14 @@
-<h1><%=h title %></h1>
-
 <p><a href="http://edupa.org/?p=4904">高校数学標準講義</a>の動画を<a href="https://apps.apple.com/jp/app/vlc-for-mobile/id650377962">iOSのVLC</a>で開くためのリンク集です。</p>
 
 <ul>
   <%- courses.each do |course| -%>
     <li>
-      <a href="#<%=h course.slug %>"><%=h course.title %></a> (<%=h hms(course.duration) %>)
+      <%=h course.title %> (<%=h hms(course.duration) %>)
       <ol>
         <%- course.chapters.each do |chapter| -%>
-          <li><a href="#<%=h chapter.slug %>"><%=h chapter.title %></a> (<%=h hms(chapter.duration) %>)</li>
+          <li><a href="<%=h "#{chapter.slug}.html" %>"><%=h chapter.title %></a> (<%=h hms(chapter.duration) %>)</li>
         <%- end -%>
       </ol>
     </li>
   <%- end -%>
 </ul>
-
-<%- courses.each do |course| -%>
-  <h2 id="<%=h course.slug %>"><a href="<%=h course.url %>"><%=h course.title %></a> (<%=h hms(course.duration) %>)</h2>
-  <%- course.chapters.each do |chapter| -%>
-    <h3 id="<%=h chapter.slug %>"><%=h chapter.title %> (<%=h hms(chapter.duration) %>)</h3>
-    <ol>
-      <%- chapter.videos.each do |video| -%>
-        <li><a href="<%=h video.vlc_url %>"><%=h video.title %></a> (<%=h hms(video.duration) %>)</li>
-      <%- end -%>
-    </ol>
-  <%- end -%>
-<%- end -%>

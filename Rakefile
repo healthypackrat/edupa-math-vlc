@@ -18,17 +18,29 @@ end
 task :default => :build_html
 
 task :build_html do
+  FileUtils.mkdir_p('docs')
+
   courses = JSON.parse(File.read('data/courses.json')).map do |hash|
     Course.new(hash)
   end
 
-  title = '高校数学標準講義'
+  brand = '高校数学標準講義'
 
-  html = erb('views/layout.erb', title: title) do
-    erb('views/index.erb', title: title, courses: courses)
+  courses.each do |course|
+    course.chapters.each do |chapter|
+      title = "#{course.title} - #{chapter.title}"
+
+      html = erb('views/layout.erb', title: title, brand: brand) do
+        erb('views/chapter.erb', title: title, chapter: chapter)
+      end
+
+      File.write("docs/#{chapter.slug}.html", html)
+    end
   end
 
-  FileUtils.mkdir_p('docs')
+  html = erb('views/layout.erb', title: brand, brand: brand) do
+    erb('views/index.erb', courses: courses)
+  end
 
   File.write('docs/index.html', html)
 end

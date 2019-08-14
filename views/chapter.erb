@@ -1,0 +1,7 @@
+<h3><%=h title %> (<%=h hms(chapter.duration) %>)</h3>
+
+<ol>
+  <%- chapter.videos.each do |video| -%>
+    <li><a href="<%=h video.vlc_url %>"><%=h video.title %></a> (<%=h hms(video.duration) %>)</li>
+  <%- end -%>
+</ol>
